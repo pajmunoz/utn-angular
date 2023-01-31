@@ -1,6 +1,5 @@
-export class schemes {
-  static one: string;
-  static two: string;
-   one = 'hrlo';
-   two = 'fu';
-}
+
+  export const text1 = 'Debe llenar los campos obligatorios';
+  export const text2 = 'Debe escribir por lo menos 3 caracteres';
+ 
+

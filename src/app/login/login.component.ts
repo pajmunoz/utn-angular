@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { schemes } from '../scheme/errors';
+import { text1, text2 } from '../scheme/errors';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +9,8 @@ import { schemes } from '../scheme/errors';
 })
 export class LoginComponent {
   myForm: FormGroup;
-  error1 = schemes.one;
-  error2 = schemes.two;
+  error1 = text1;
+  error2 = text2;
 
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
