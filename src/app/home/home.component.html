@@ -1,8 +1,0 @@
-<div *ngFor="let producto of productos">
-    <p>{{producto.title}}</p>
-    <img src="{{producto.thumbnail}}" alt="" srcset="">
-    <p>{{producto.price | currency}} <span>{{producto.currency_id}}</span></p>
-    <span *ngFor="let tag of producto.tags">
-        {{tag}}
-    </span>
-</div>

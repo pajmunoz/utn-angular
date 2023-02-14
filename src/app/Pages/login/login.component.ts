@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { text1, text2 } from '../scheme/errors';
+import { text1, text2 } from '../../scheme/errors';
 
 @Component({
   selector: 'app-login',

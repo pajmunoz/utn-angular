@@ -1,0 +1,7 @@
+
+    <h3>{{producto?.detalle?.title}}</h3>
+    <p>{{producto?.detalle?.price | currency}} <span>{{producto?.detalle?.currency_id}}</span></p>
+    <div *ngFor="let picture of producto?.detalle?.pictures">
+        <img src="{{picture?.url}}" alt="">
+    </div>
+    <p>{{producto?.descripcion?.plain_text}}</p>
