@@ -6,21 +6,8 @@
 <div *ngIf="!loader">
     <mat-grid-list cols="4" rowHeight="250px" gutterSize="10px">
         <mat-grid-tile *ngFor="let producto of productos">
-            <mat-card class="card" matRipple>
-                <mat-card-header>
-                    <mat-card-title>{{producto?.title | slice:0:20}}...</mat-card-title>
-                </mat-card-header>
-                <picture class="img">
-                    <img mat-card-image src="{{producto.thumbnail}}" alt="" srcset="" height="200px">
-                </picture>
-                <mat-card-content>
-                    <p>{{producto?.price | currency}} <span>{{producto?.currency_id}}</span></p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <button mat-raised-button color="primary" routerLink="/producto/{{producto?.id}}">Ver
-                        detalle</button>
-                </mat-card-actions>
-            </mat-card>
+            <app-producto [data]="producto" (reload)="eliminar()"> 
+            </app-producto>
         </mat-grid-tile>
     </mat-grid-list>
 </div>

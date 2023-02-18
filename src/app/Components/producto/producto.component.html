@@ -1,0 +1,23 @@
+<mat-card class="card" matRipple>
+    <mat-card-header>
+        <mat-card-title>{{data?.title | slice:0:20}}...</mat-card-title>
+    </mat-card-header>
+    <picture class="img">
+        <img mat-card-image src="{{data.thumbnail}}" alt="" srcset="" height="200px">
+    </picture>
+    <mat-card-content>
+        <p>{{data?.price | currency}} <span>{{data?.currency_id}}</span></p>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="row">
+            <div class="col">
+                <button mat-raised-button color="primary" routerLink="/producto/{{data?.id}}">Detalle</button>
+            </div>
+            <div class="col">
+                <button mat-stroked-button color="accent" (click)="delete()">Borrar</button>
+            </div>
+        </div>
+
+
+    </mat-card-actions>
+</mat-card>

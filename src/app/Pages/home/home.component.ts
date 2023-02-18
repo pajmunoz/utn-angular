@@ -30,6 +30,9 @@ export class HomeComponent {
       console.log(e)
     }
   }
+  eliminar(){
+    console.log("delete home")
+  }
 
   
 }
