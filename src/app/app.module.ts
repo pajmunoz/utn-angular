@@ -10,9 +10,17 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { DetalleComponent } from './Pages/detalle/detalle.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ListadoModule } from './listado/listado.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatRippleModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -22,9 +30,7 @@ import { ListadoModule } from './listado/listado.module';
     CatalogoComponent,
     LoginComponent,
     DetalleComponent,
-    NavbarComponent,
     FooterComponent,
-  
   ],
   imports: [
     BrowserModule,
@@ -32,10 +38,18 @@ import { ListadoModule } from './listado/listado.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ListadoModule
-    
+    ListadoModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatRippleModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDividerModule,
+    MatSidenavModule,
   ],
-  providers: [  ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

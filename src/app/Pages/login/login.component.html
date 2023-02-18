@@ -1,24 +1,34 @@
-<h1>Login</h1>
-<form [formGroup]="myForm" (ngSubmit)="registrarse()">
-    <div>
-        <label>Nombre</label>
-        <input type="text" formControlName="nombre" [ngClass]="{
-            error: myForm.get('nombre')?.hasError('required') && myForm.get('nombre')?.dirty,
-            warning:myForm.get('nombre')?.hasError('minlength') && myForm.get('nombre')?.dirty}">
-    </div>
-    <div *ngIf="myForm.get('nombre')?.errors && myForm.get('nombre')?.dirty">
-        <p *ngIf="myForm.get('nombre')?.hasError('required')" class="textError">{{error1}}</p>
-        <p *ngIf="myForm.get('nombre')?.hasError('minlength')" class="textError">{{error2}}
-        </p>
-    </div>
-    <div>
-        <label>Apellido</label>
-        <input type="text" formControlName="apellido">
-    </div>
-    <div *ngIf="myForm.get('apellido')?.errors && myForm.get('apellido')?.dirty">
-        <p *ngIf="myForm.get('apellido')?.hasError('required')" class="textError">{{error1}}</p>
-        <p *ngIf="myForm.get('apellido')?.hasError('minlength')" class="textError">{{error2}}
-        </p>
-    </div>
-    <button type="submit" [disabled]="myForm.invalid">Registrarse</button>
-</form>
+<div class="text-center display-2 mb-5 main-color">Inicia Sesión</div>
+<div class="mx-auto w-50">
+    <form [formGroup]="myForm" (ngSubmit)="registrarse()">
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="w-100 mb-5">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput type="text" formControlName="nombre" [ngClass]="{
+                    error: myForm.get('nombre')?.hasError('required') && myForm.get('nombre')?.dirty,
+                    warning:myForm.get('nombre')?.hasError('minlength') && myForm.get('nombre')?.dirty}">
+                    <mat-error *ngIf="myForm.get('nombre')?.errors && myForm.get('nombre')?.dirty">
+                        <p *ngIf="myForm.get('nombre')?.hasError('required')" class="textError">{{error1}}</p>
+                        <p *ngIf="myForm.get('nombre')?.hasError('minlength')" class="textError">{{error2}}
+                        </p>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="w-100 mb-5">
+                    <mat-label>Apellido</mat-label>
+                    <input matInput type="text" formControlName="apellido">
+                    <mat-error *ngIf="myForm.get('apellido')?.errors && myForm.get('apellido')?.dirty">
+                        <p *ngIf="myForm.get('apellido')?.hasError('required')" class="textError">{{error1}}</p>
+                        <p *ngIf="myForm.get('apellido')?.hasError('minlength')" class="textError">{{error2}}
+                        </p>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+        <button class="w-100 mt-3" mat-button color="primary" type="submit" [disabled]="myForm.invalid">Inicia Sesión</button>
+    </form>
+</div>

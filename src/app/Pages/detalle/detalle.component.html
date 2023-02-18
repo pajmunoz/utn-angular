@@ -1,7 +1,19 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{producto?.detalle?.title| slice:0:50}}</li>
+    </ol>
+  </nav>
 
-    <h3>{{producto?.detalle?.title}}</h3>
-    <p>{{producto?.detalle?.price | currency}} <span>{{producto?.detalle?.currency_id}}</span></p>
-    <div *ngFor="let picture of producto?.detalle?.pictures">
+<div class="display-3 main-color">{{producto?.detalle?.title | slice:0:50}}</div>
+<h1 class="my-5">{{producto?.detalle?.price | currency}} <span>{{producto?.detalle?.currency_id}}</span></h1>
+<mat-divider></mat-divider>
+<p class="my-5">{{producto?.descripcion?.plain_text}}</p>
+<mat-divider></mat-divider>
+<mat-grid-list class="my-5" cols="4" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let picture of producto?.detalle?.pictures">
         <img src="{{picture?.url}}" alt="">
-    </div>
-    <p>{{producto?.descripcion?.plain_text}}</p>
+    </mat-grid-tile>
+</mat-grid-list>
+
+

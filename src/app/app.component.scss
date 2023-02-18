@@ -1,4 +1,16 @@
-.textError{
-    color: red;
-    font-size: 8px;
+.textError {
+  color: red;
+  font-size: 8px;
+}
+.sidenav-content {
+    margin-bottom:200px;
+}
+
+.float-btn{
+  position:fixed;
+  z-index: 2;
+  background-color: #fff;
+  padding:2em 1em;
+  top: 50%;
+  transform: translateY(-50%);
 }

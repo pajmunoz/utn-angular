@@ -8,6 +8,13 @@ import { Producto, ResponseProducto } from 'src/app/Interfaces/Productos';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number | undefined;
+  color: string | undefined;
+  
   productos:Producto[] = []
   constructor(private productosService:ProductosService){
     this.init()
