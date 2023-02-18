@@ -9,6 +9,7 @@ import { ProductosService } from 'src/app/productos.service';
   styleUrls: ['./detalle.component.scss'],
 })
 export class DetalleComponent {
+  loader:boolean = true;
   id: string;
   producto!:ProductoDescripcion
   constructor(
@@ -23,6 +24,7 @@ export class DetalleComponent {
       const producto:Producto = await this.productosService.getById(this.id);
       const descripcion:Descripcion = await this.productosService.getDescriptioinById(this.id)
       this.producto ={detalle:producto,descripcion}
+      this.loader=false
     } catch (e) {
       console.log(e);
     }

@@ -1,8 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #fafafa; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fafafa;
+}
 
-.main-color{
-    color: #673ab7;
+.main-color {
+  color: #673ab7;
+}
+.bg-main-color {
+  background-color: #673ab7;
+  padding: 0.2em;
+  border-radius: 0 0 0.5em 0.5em;
+  color: #fff;
+  border: #fff 0.3em solid;
+  box-sizing: content-box;
+  border-top: transparent;
+  box-shadow: 1px 6px 12px 0px rgba(1, 10, 2, .2);
 }
