@@ -1,4 +1,4 @@
-<mat-card class="card" matRipple>
+<mat-card class="card mb-3" matRipple>
     <mat-card-header>
         <mat-card-title>{{data?.title | slice:0:20}}...</mat-card-title>
     </mat-card-header>
@@ -17,7 +17,5 @@
                 <button mat-stroked-button color="accent" (click)="delete()" *ngIf="isLogin">Borrar</button>
             </div>
         </div>
-
-
     </mat-card-actions>
 </mat-card>

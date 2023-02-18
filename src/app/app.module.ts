@@ -26,7 +26,6 @@ import { ProductoComponent } from './Components/producto/producto.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { SearchComponent } from './Components/search/search.component';
-import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { SearchPipe } from './search.pipe';
     ProductoComponent,
     NotFoundComponent,
     SearchComponent,
-    SearchPipe,
   ],
   imports: [
     BrowserModule,

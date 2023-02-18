@@ -23,7 +23,6 @@ export class HomeComponent {
     this.init()
   }
   async init(){
-    
     try{
       const response:any|ResponseProducto = await this.productosService.getAllPromise( this.inputProducto)
       this.productos=response.results   
@@ -42,6 +41,7 @@ export class HomeComponent {
       const response:any|ResponseProducto = await this.productosService.getAllPromise( this.inputProducto)
       this.productos=response.results   
       this.loader = false;
+      localStorage.setItem("search",this.inputProducto)
     }catch(e){
       console.log(e)
     }

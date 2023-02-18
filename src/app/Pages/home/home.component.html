@@ -12,10 +12,11 @@
     <mat-spinner class="mx-auto"></mat-spinner>
 </div>
 <div *ngIf="!loader">
-    <mat-grid-list cols="4" rowHeight="250px" gutterSize="10px">
-        <mat-grid-tile *ngFor="let producto of productos">
+    <div class="row">
+        <div class="col-sm-6 col-md-3" *ngFor="let producto of productos">
             <app-producto [data]="producto" (reload)="eliminar()">
             </app-producto>
-        </mat-grid-tile>
-    </mat-grid-list>
+
+        </div>
+    </div>
 </div>
