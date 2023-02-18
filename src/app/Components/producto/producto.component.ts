@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Producto } from 'src/app/Interfaces/Productos';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-producto',
@@ -14,5 +15,11 @@ export class ProductoComponent {
   reload= new EventEmitter();
   delete() {
     this.reload.emit()
+  }
+  isLogin=false;
+  constructor(private auth: AuthService) {
+    this.auth.isAuthenticate().subscribe((login) => {
+      this.isLogin = login;
+    });
   }
 }

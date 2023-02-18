@@ -6,13 +6,18 @@
         </button>
     </div>
     <div class="col-12">
-        <button class="w-75 mb-3" routerLink="/signin" mat-raised-button>
+        <button class="w-75 mb-3" routerLink="/signin" mat-raised-button *ngIf="!isLogin">
             Sign In
         </button>
     </div>
     <div class="col-12">
-        <button class="w-75 mb-3" routerLink="/login" mat-raised-button>
+        <button class="w-75 mb-3" routerLink="/login" mat-raised-button *ngIf="!isLogin">
             Log In
+        </button>
+    </div>
+    <div class="col-12">
+        <button class="w-75 mb-3" (click)="logout()" mat-raised-button *ngIf="isLogin">
+            Log Out
         </button>
     </div>
 </div>

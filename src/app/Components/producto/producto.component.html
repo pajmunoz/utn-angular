@@ -14,7 +14,7 @@
                 <button mat-raised-button color="primary" routerLink="/producto/{{data?.id}}">Detalle</button>
             </div>
             <div class="col">
-                <button mat-stroked-button color="accent" (click)="delete()">Borrar</button>
+                <button mat-stroked-button color="accent" (click)="delete()" *ngIf="isLogin">Borrar</button>
             </div>
         </div>
 
