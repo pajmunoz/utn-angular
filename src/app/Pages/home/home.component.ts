@@ -11,6 +11,7 @@ export class HomeComponent {
   centered = false;
   disabled = false;
   unbounded = false;
+  loader:boolean = true;
 
   radius: number | undefined;
   color: string | undefined;
@@ -20,9 +21,11 @@ export class HomeComponent {
     this.init()
   }
   async init(){
+    
     try{
       const response:any|ResponseProducto = await this.productosService.getAllPromise()
       this.productos=response.results   
+      this.loader = false;
     }catch(e){
       console.log(e)
     }

@@ -18,13 +18,13 @@ export class ProductosService {
   getAllPromise() {
     //"lastValueFrom" CONVIERTE OBSERVABLE EN PROMESA
     return lastValueFrom(
-      this.http.get('https://api.mercadolibre.com/sites/MLA/search?q=ipod')
+      this.http.get('https://api.mercadolibre.com/sites/MLA/search?q=mustang')
     );
   }
   getAllPipe() {
     return lastValueFrom(
       this.http
-        .get('https://api.mercadolibre.com/sites/MLA/search?q=ipod')
+        .get('https://api.mercadolibre.com/sites/MLA/search?q=mustang')
         .pipe(map((value: any) => value.results))
     );
   }
