@@ -25,6 +25,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProductoComponent } from './Components/producto/producto.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { SearchComponent } from './Components/search/search.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
     FooterComponent,
     ProductoComponent,
     NotFoundComponent,
+    SearchComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

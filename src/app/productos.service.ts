@@ -15,19 +15,19 @@ export class ProductosService {
       'https://api.mercadolibre.com/sites/MLA/search?q=ipod'
     );
   }
-  getAllPromise() {
+  getAllPromise(title:string){
     //"lastValueFrom" CONVIERTE OBSERVABLE EN PROMESA
     return lastValueFrom(
-      this.http.get('https://api.mercadolibre.com/sites/MLA/search?q=mustang')
+      this.http.get(`https://api.mercadolibre.com/sites/MLA/search?q=${title}`)
     );
   }
-  getAllPipe() {
+ /*  getAllPipe() {
     return lastValueFrom(
       this.http
         .get('https://api.mercadolibre.com/sites/MLA/search?q=mustang')
         .pipe(map((value: any) => value.results))
     );
-  }
+  } */
   getById(id: string):Promise<Producto> {
     return lastValueFrom(
       this.http.get<Producto>(`https://api.mercadolibre.com/items/${id}`)

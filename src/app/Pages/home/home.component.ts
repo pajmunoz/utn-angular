@@ -16,6 +16,8 @@ export class HomeComponent {
   radius: number | undefined;
   color: string | undefined;
   
+  inputProducto:string = 'Angular curso'
+
   productos:Producto[] = []
   constructor(private productosService:ProductosService){
     this.init()
@@ -23,7 +25,7 @@ export class HomeComponent {
   async init(){
     
     try{
-      const response:any|ResponseProducto = await this.productosService.getAllPromise()
+      const response:any|ResponseProducto = await this.productosService.getAllPromise( this.inputProducto)
       this.productos=response.results   
       this.loader = false;
     }catch(e){
@@ -33,6 +35,18 @@ export class HomeComponent {
   eliminar(){
     console.log("delete home")
   }
+  async buscar(){
+    console.log(this.inputProducto)
+    this.loader = true;
+    try{
+      const response:any|ResponseProducto = await this.productosService.getAllPromise( this.inputProducto)
+      this.productos=response.results   
+      this.loader = false;
+    }catch(e){
+      console.log(e)
+    }
+  }
+
 
   
 }

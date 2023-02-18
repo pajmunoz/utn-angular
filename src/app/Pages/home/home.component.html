@@ -1,12 +1,20 @@
 <div class="text-center display-2 mb-3 main-color">Catálogo</div>
 <mat-divider></mat-divider>
+<div class="text-center">
+    <mat-form-field class="w-50 my-5">
+        <mat-label>Búsqueda</mat-label>
+        <input matInput (keyup)="buscar()" placeholder="Ex. Pizza" value="{{inputProducto}}"
+            [(ngModel)]="inputProducto">
+    </mat-form-field>
+</div>
+
 <div class="spinner" *ngIf="loader">
     <mat-spinner class="mx-auto"></mat-spinner>
 </div>
 <div *ngIf="!loader">
     <mat-grid-list cols="4" rowHeight="250px" gutterSize="10px">
         <mat-grid-tile *ngFor="let producto of productos">
-            <app-producto [data]="producto" (reload)="eliminar()"> 
+            <app-producto [data]="producto" (reload)="eliminar()">
             </app-producto>
         </mat-grid-tile>
     </mat-grid-list>
