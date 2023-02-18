@@ -24,6 +24,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProductoComponent } from './Components/producto/producto.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DetalleComponent,
     FooterComponent,
     ProductoComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
