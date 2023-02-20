@@ -11,42 +11,46 @@ export class HomeComponent {
   centered = false;
   disabled = false;
   unbounded = false;
-  loader:boolean = true;
+  loader: boolean = true;
 
   radius: number | undefined;
   color: string | undefined;
-  
-  inputProducto:string = 'Angular curso'
 
-  productos:Producto[] = []
-  constructor(private productosService:ProductosService){
-    this.init()
+  inputProducto: string = '';
+
+  isInputProducto: boolean = false;
+ showText: boolean = false;
+  productos: Producto[] = [];
+  constructor(private productosService: ProductosService) {
+    this.init();
   }
-  async init(){
-    try{
-      const response:any|ResponseProducto = await this.productosService.getAllPromise( this.inputProducto)
-      this.productos=response.results   
+  async init() {
+    this.inputProducto = String(localStorage.getItem('search'));
+    try {
+      const response: any | ResponseProducto =
+        await this.productosService.getAllPromise(this.inputProducto);
+      this.productos = response.results;
       this.loader = false;
-    }catch(e){
-      console.log(e)
+    } catch (e) {
+      console.log(e);
     }
   }
-  eliminar(){
-    console.log("delete home")
+  eliminar() {
+    console.log('delete home');
   }
-  async buscar(){
-    console.log(this.inputProducto)
+  async buscar() {
     this.loader = true;
-    try{
-      const response:any|ResponseProducto = await this.productosService.getAllPromise( this.inputProducto)
-      this.productos=response.results   
+    this.isInputProducto = this.inputProducto.length ? true : false;
+    console.log(this.isInputProducto);
+    this.showText=false
+    try {
+      const response: any | ResponseProducto =
+        await this.productosService.getAllPromise(this.inputProducto);
+      this.productos = response.results;
       this.loader = false;
-      localStorage.setItem("search",this.inputProducto)
-    }catch(e){
-      console.log(e)
+      localStorage.setItem('search', this.inputProducto);
+    } catch (e) {
+      console.log(e);
     }
   }
-
-
-  
 }

@@ -6,7 +6,7 @@ import { NavbarComponent } from '../Components/navbar/navbar.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -24,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
     AppRoutingModule,
     MatSidenavModule,
     MatButtonModule,
+    MatDividerModule,
   ]
 })
 export class ListadoModule { }

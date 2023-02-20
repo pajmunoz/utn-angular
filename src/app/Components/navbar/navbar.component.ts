@@ -22,7 +22,13 @@ export class NavbarComponent {
   callMethods() {
     this.toggleSidenav();
   }
-  logout(){
-    this.auth.logout();
+  refresh(): void {
+    window.location.reload();
   }
+  logout() {
+    this.auth.logout();
+    localStorage.setItem('search', '');
+    this.refresh()
+  }
+  
 }

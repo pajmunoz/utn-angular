@@ -1,23 +1,31 @@
 <div class="m-5 text-center display-4" style="color:#673ab7;">Flame store</div>
 <div class="row text-center">
     <div class="col-12">
-        <button class="w-75 mb-3" routerLink="/" mat-raised-button>
-            Home
-        </button>
+        <a class="w-75 mb-3" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}" mat-button>
+            Inicio - Catálogo
+        </a>
     </div>
     <div class="col-12">
-        <button class="w-75 mb-3" routerLink="/signin" mat-raised-button *ngIf="!isLogin">
-            Sign In
-        </button>
+        <a class="w-75 mb-3" routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}" mat-button *ngIf="!isLogin">
+            Inicia Sesión
+        </a>
     </div>
     <div class="col-12">
-        <button class="w-75 mb-3" routerLink="/login" mat-raised-button *ngIf="!isLogin">
-            Log In
-        </button>
+        <a class="w-75 mb-3" routerLink="/signin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}" mat-button *ngIf="!isLogin">
+            Regístrate
+        </a>
     </div>
-    <div class="col-12">
-        <button class="w-75 mb-3" (click)="logout()" mat-raised-button *ngIf="isLogin">
-            Log Out
-        </button>
+    <div class="log-out" *ngIf="isLogin">
+        <mat-divider class="mb-3"></mat-divider>
+        <div class="col-12">
+            <a class="w-75 mb-3" (click)="logout()" mat-button>
+                Salir
+            </a>
+        </div>
+
     </div>
+   
 </div>

@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a class="main-color" routerLink="/">Home</a></li>
+    <li class="breadcrumb-item"><a class="main-color fw-bold" (click)="backClicked()">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{producto?.detalle?.title| slice:0:50}}</li>
   </ol>
 </nav>

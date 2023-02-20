@@ -26,6 +26,7 @@ import { ProductoComponent } from './Components/producto/producto.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { SearchComponent } from './Components/search/search.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { SearchComponent } from './Components/search/search.component';
     MatSidenavModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

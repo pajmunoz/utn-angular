@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Producto } from 'src/app/Interfaces/Productos';
 
 @Component({
   selector: 'app-search',

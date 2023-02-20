@@ -1,16 +1,28 @@
 <div class="text-center display-2 mb-3 main-color">Catálogo</div>
+
 <mat-divider></mat-divider>
+
 <div class="text-center">
     <mat-form-field class="w-50 my-5">
         <mat-label>Búsqueda</mat-label>
-        <input matInput (keyup)="buscar()" placeholder="Ex. Pizza" value="{{inputProducto}}"
+        <input matInput (keyup)="buscar()" placeholder="Ej. Cocina" value="{{inputProducto}}"
             [(ngModel)]="inputProducto">
+        <button *ngIf="inputProducto" matSuffix mat-icon-button aria-label="Clear" (click)="inputProducto='';buscar()">
+            <mat-icon>close</mat-icon>
+        </button>
     </mat-form-field>
 </div>
 
-<div class="spinner" *ngIf="loader">
+<div class="spinner mt-5" *ngIf="loader">
     <mat-spinner class="mx-auto"></mat-spinner>
 </div>
+
+<div *ngIf="!showText && !isInputProducto">
+    <div class="display-5 mx-auto mt-5 w-50 text-center main-color">¿Qué buscás?<br><span class="h6 lead text-secondary">↑ Escribe en la barra de búsqueda ↑</span></div>
+</div>
+
+
+
 <div *ngIf="!loader">
     <div class="row">
         <div class="col-sm-6 col-md-3" *ngFor="let producto of productos">
