@@ -15,13 +15,14 @@ export class RegistroComponent {
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3)]],
-      apellido: [''],
+      apellido: ['',[Validators.required, Validators.minLength(3)]],
       phone: [
         '',
         [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)],
       ],
-      correo: ['', [Validators.required]],
-      clave: ['', [Validators.required]],
+      correo: ['', [Validators.required, Validators.minLength(3)]],
+      clave: ['', [Validators.required, Validators.minLength(8)]],
+      clave2: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 

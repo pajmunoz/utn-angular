@@ -18,31 +18,66 @@
             <div class="col">
                 <mat-form-field class="w-100 mb-5">
                     <mat-label>Apellido</mat-label>
-                    <input matInput type="text" formControlName="apellido">
+                    <input matInput type="text" formControlName="apellido" [ngClass]="{
+                        error: myForm.get('apellido')?.hasError('required') && myForm.get('apellido')?.dirty,
+                        warning:myForm.get('apellido')?.hasError('minlength') && myForm.get('apellido')?.dirty}">
+                    <mat-error *ngIf="myForm.get('apellido')?.errors && myForm.get('apellido')?.dirty">
+                        <p *ngIf="myForm.get('apellido')?.hasError('required')" class="textError">{{error1}}</p>
+                        <p *ngIf="myForm.get('apellido')?.hasError('minlength')" class="textError">{{error2}}
+                        </p>
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div class="col">
                 <mat-form-field class="w-100 mb-5">
                     <mat-label>Teléfono</mat-label>
-                    <input matInput type="number" formControlName="phone">
+                    <input matInput type="number" formControlName="phone" [ngClass]="{
+                        error: myForm.get('phone')?.hasError('required') && myForm.get('phone')?.dirty,
+                        warning:myForm.get('phone')?.hasError('minlength') && myForm.get('phone')?.dirty}">
+                    <mat-error *ngIf="myForm.get('phone')?.errors && myForm.get('phone')?.dirty">
+                        <p *ngIf="myForm.get('phone')?.hasError('required')" class="textError">{{error1}}</p>
+                        <p *ngIf="myForm.get('phone')?.hasError('minlength')" class="textError">{{error2}}
+                        </p>
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div class="col">
                 <mat-form-field class="w-100 mb-5">
                     <mat-label>Email</mat-label>
-                    <input matInput type="email" formControlName="correo">
+                    <input matInput type="email" formControlName="correo" [ngClass]="{
+                        error: myForm.get('correo')?.hasError('required') && myForm.get('correo')?.dirty,
+                        warning:myForm.get('correo')?.hasError('minlength') && myForm.get('correo')?.dirty}">
+                    <mat-error *ngIf="myForm.get('correo')?.errors && myForm.get('correo')?.dirty">
+                        <p *ngIf="myForm.get('correo')?.hasError('required')" class="textError">{{error1}}</p>
+                        <p *ngIf="myForm.get('correo')?.hasError('minlength')" class="textError">{{error2}}
+                        </p>
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div class="col">
                 <mat-form-field class="w-100 mb-5">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput type="password" formControlName="clave">
+                    <input matInput type="password" formControlName="clave" [ngClass]="{
+                        error: myForm.get('clave')?.hasError('required') && myForm.get('clave')?.dirty,
+                        warning:myForm.get('clave')?.hasError('minlength') && myForm.get('clave')?.dirty}">
+                    <mat-error *ngIf="myForm.get('clave')?.errors && myForm.get('clave')?.dirty">
+                        <p *ngIf="myForm.get('clave')?.hasError('required')" class="textError">{{error1}}</p>
+                        <p *ngIf="myForm.get('clave')?.hasError('minlength')" class="textError">{{error2}}
+                        </p>
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div class="col">
                 <mat-form-field class="w-100 mb-5">
-                    <mat-label>Contraseña</mat-label>
-                    <input matInput type="password" formControlName="clave">
+                    <mat-label>Confirmar Contraseña</mat-label>
+                    <input matInput type="password" formControlName="clave2" [ngClass]="{
+                        error: myForm.get('clave2')?.hasError('required') && myForm.get('clave2')?.dirty,
+                        warning:myForm.get('clave2')?.hasError('minlength') && myForm.get('clave2')?.dirty}">
+                    <mat-error *ngIf="myForm.get('clave2')?.errors && myForm.get('clave2')?.dirty">
+                        <p *ngIf="myForm.get('clave2')?.hasError('required')" class="textError">{{error1}}</p>
+                        <p *ngIf="myForm.get('clave2')?.hasError('minlength')" class="textError">{{error2}}
+                        </p>
+                    </mat-error>
                 </mat-form-field>
             </div>
         </div>
