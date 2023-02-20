@@ -19,18 +19,24 @@ export class HomeComponent {
   inputProducto: string = '';
 
   isInputProducto: boolean = false;
- showText: boolean = false;
+  showText: boolean = true;
   productos: Producto[] = [];
   constructor(private productosService: ProductosService) {
     this.init();
   }
   async init() {
-    this.inputProducto = String(localStorage.getItem('search'));
+    this.isInputProducto = this.inputProducto.length || !localStorage.getItem('search') ? true : false;
+    this.inputProducto! = localStorage.getItem('search')
+      ? String(localStorage.getItem('search'))
+      : '';
+      this.showText = this.isInputProducto?true:false;
     try {
       const response: any | ResponseProducto =
         await this.productosService.getAllPromise(this.inputProducto);
       this.productos = response.results;
       this.loader = false;
+      
+      
     } catch (e) {
       console.log(e);
     }
@@ -41,14 +47,15 @@ export class HomeComponent {
   async buscar() {
     this.loader = true;
     this.isInputProducto = this.inputProducto.length ? true : false;
+    this.showText = !this.isInputProducto?true:false;
     console.log(this.isInputProducto);
-    this.showText=false
+
     try {
       const response: any | ResponseProducto =
         await this.productosService.getAllPromise(this.inputProducto);
       this.productos = response.results;
-      this.loader = false;
       localStorage.setItem('search', this.inputProducto);
+      this.loader = false;
     } catch (e) {
       console.log(e);
     }

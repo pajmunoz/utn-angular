@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Location} from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
 import {
@@ -23,13 +22,9 @@ export class DetalleComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productosService: ProductosService,
-    private location: Location
   ) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id') || '';
     this.init();
-  }
-  async backClicked(){
-    this.location.back();
   }
   async init() {
     try {

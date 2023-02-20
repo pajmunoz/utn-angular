@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a class="main-color fw-bold" (click)="backClicked()">Home</a></li>
+    <li class="breadcrumb-item"><a class="main-color fw-bold" routerLink="/">Catálogo</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{producto?.detalle?.title| slice:0:50}}</li>
   </ol>
 </nav>
@@ -20,5 +20,5 @@
       <img src="{{picture?.url}}" alt="">
     </mat-grid-tile>
   </mat-grid-list>
-  <button mat-stroked-button color="primary" routerLink="/">Volver al catálogo</button>
+  <button mat-stroked-button color="primary" routerLink="/"><mat-icon  fontIcon="chevron_left"></mat-icon>Volver al catálogo</button>
 </div>

@@ -27,7 +27,7 @@ export class NavbarComponent {
   }
   logout() {
     this.auth.logout();
-    localStorage.setItem('search', '');
+    localStorage.clear();
     this.refresh()
   }
   
